@@ -3,9 +3,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float hitPoint;
-
     private EnemyPool enemyPool;
-
     private float currentHitPoint;
 
     [SerializeField] private float speed;
@@ -29,7 +27,6 @@ public class EnemyController : MonoBehaviour
             gameObject.SetActive(false);
         }
             
-
         Move();
     }
 

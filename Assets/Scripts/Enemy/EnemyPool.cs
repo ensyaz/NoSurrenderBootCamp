@@ -23,6 +23,7 @@ public class EnemyPool : MonoBehaviour
         for (int i = 0; i < enemyAmount; i++)
         {
             enemyObjects[i] = Instantiate(enemyPrefab, transform);
+            enemyObjects[i].name = "Enemy " + (i + 1).ToString();
             enemyObjects[i].SetActive(false);
             enemyObjects[i].transform.position = new Vector3(Random.Range(-6f, 6f), enemyObjects[i].transform.position.y, 7f);
         }

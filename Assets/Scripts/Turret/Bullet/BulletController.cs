@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -6,10 +7,13 @@ public class BulletController : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float disableTime;
 
+    private Rigidbody rb;
+
     private WaitForSeconds disableTimer;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>(); 
         disableTimer = new WaitForSeconds(disableTime);
     }
 
@@ -21,7 +25,8 @@ public class BulletController : MonoBehaviour
     private IEnumerator DisableBullet()
     {
         yield return disableTimer;
-        Destroy(gameObject);    
+        gameObject.SetActive(false);
+        //Destroy(gameObject);    
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,8 +34,15 @@ public class BulletController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemyController>().GetHit(damage);
-            Destroy(gameObject);
-        }
-            
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+        } 
+    }
+
+    private void OnDisable()
+    {
+        rb.velocity = Vector3.zero;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
     }
 }

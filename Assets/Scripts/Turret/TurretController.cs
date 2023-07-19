@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TurretController : TurretState
@@ -14,11 +12,13 @@ public class TurretController : TurretState
 
     [Header("Components")]
     [SerializeField] private Transform muzzleTransform;
+    [SerializeField] private BulletPool bulletPool;
 
     private GameObject nearestEnemy;
     private LayerMask enemyLayer;
     private float nearestDistance = float.MaxValue;
     private float attackCounter;
+    private int bulletCounter;
 
     private void Awake()
     {
@@ -36,7 +36,6 @@ public class TurretController : TurretState
         {
             AttackEnemy();
         }
-
     }
 
     private void SearchEnemy()
@@ -55,7 +54,11 @@ public class TurretController : TurretState
     private void AttackEnemy()
     {
         if (!nearestEnemy.activeInHierarchy)
+        {
             currentState = State.Search;
+            Debug.Log(nearestEnemy.name);
+        }
+            
 
         transform.LookAt(nearestEnemy.transform);
 
@@ -64,8 +67,14 @@ public class TurretController : TurretState
             // Reset counter
             attackCounter = 0f;
 
-            GameObject bulletObj = Instantiate(bulletPrefab, muzzleTransform, false);
-            bulletObj.GetComponent<Rigidbody>().AddForce(muzzleTransform.forward * bulletSpeed, ForceMode.Impulse);
+            if (bulletCounter >= bulletPool.bulletObjects.Length)
+                bulletCounter = 0;
+
+            bulletPool.bulletObjects[bulletCounter].SetActive(true);
+            bulletPool.bulletObjects[bulletCounter].GetComponent<Rigidbody>().AddForce(muzzleTransform.forward * bulletSpeed, ForceMode.Impulse);
+            bulletCounter++;
+            // GameObject bulletObj = Instantiate(bulletPrefab, muzzleTransform, false);
+            // bulletObj.GetComponent<Rigidbody>().AddForce(muzzleTransform.forward * bulletSpeed, ForceMode.Impulse);
         }
         else
         {

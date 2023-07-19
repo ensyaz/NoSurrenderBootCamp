@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3375659454844228880}
   - component: {fileID: 2370236296932359611}
+  - component: {fileID: 8972970825766689292}
   - component: {fileID: 5303167943286850410}
   - component: {fileID: 828721851204795028}
   - component: {fileID: 5121540886438685068}
@@ -190,6 +191,34 @@ MonoBehaviour:
   attackRange: 7.5
   fireRate: 1
   bulletSpeed: 2
+  bulletPrefab: {fileID: 6345071740739119402, guid: 1367fb78aa6728644bc657d27bf74eb0, type: 3}
+  muzzleTransform: {fileID: 1475467157535462431}
+  bulletPool: {fileID: 8972970825766689292}
+--- !u!114 &8972970825766689292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358730791900446564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b2060622f9a3a43a9a8af0094b50ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  disabledBulletCount: 0
+  bulletAmount: 10
   bulletPrefab: {fileID: 6345071740739119402, guid: 1367fb78aa6728644bc657d27bf74eb0, type: 3}
   muzzleTransform: {fileID: 1475467157535462431}
 --- !u!33 &5303167943286850410
@@ -286,7 +315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6820243694527225143}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -294,7 +323,7 @@ Transform:
   - {fileID: 3651092826044393072}
   - {fileID: 3375659454844228880}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7690694188061602146
 GameObject:

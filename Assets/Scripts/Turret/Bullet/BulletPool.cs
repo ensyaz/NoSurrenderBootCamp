@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    public GameObject[] bulletObjects; 
+    public GameObject[] bulletObjects;
+    public int disabledBulletCount;
 
     [Header("Attributes")]
     [SerializeField] private int bulletAmount;
@@ -23,9 +24,8 @@ public class BulletPool : MonoBehaviour
         for (int i = 0; i < bulletAmount; i++)
         {
             bulletObjects[i] = Instantiate(bulletPrefab, muzzleTransform, false);
+            bulletObjects[i].name = "Bullet " + (i+1).ToString();
             bulletObjects[i].SetActive(false);
         }
     }
-
-
 }
