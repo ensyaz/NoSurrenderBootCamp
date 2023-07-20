@@ -57,8 +57,7 @@ public class TowerController : TowerState
         {
             currentState = State.Search;
         }
-            
-
+           
         transform.LookAt(nearestEnemy.transform);
 
         if (attackCounter >= fireRate)
@@ -71,6 +70,7 @@ public class TowerController : TowerState
 
             bulletPool.bulletObjects[bulletCounter].SetActive(true);
             bulletPool.bulletObjects[bulletCounter].GetComponent<Rigidbody>().AddForce(muzzleTransform.forward * bulletSpeed, ForceMode.Impulse);
+            bulletPool.bulletObjects[bulletCounter].GetComponent<BulletController>().BulletCheckPosition(nearestEnemy);
             bulletCounter++;
             // GameObject bulletObj = Instantiate(bulletPrefab, muzzleTransform, false);
             // bulletObj.GetComponent<Rigidbody>().AddForce(muzzleTransform.forward * bulletSpeed, ForceMode.Impulse);
@@ -84,6 +84,8 @@ public class TowerController : TowerState
     private void GetNearestEnemy(Collider[] enemyColliders)
     {
         float distance;
+        nearestDistance = float.MaxValue;
+        nearestEnemy = null;
 
         foreach (Collider col in enemyColliders)
         {

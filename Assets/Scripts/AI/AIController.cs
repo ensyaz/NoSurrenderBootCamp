@@ -1,15 +1,20 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class AIController : AIState
 {
     [Header("Attributes")]
     [SerializeField] private float searchRange;
+    [SerializeField] private float hitPoint;
 
     [Header("LayerMasks")]
     [SerializeField] private LayerMask attackableLayer;
     [SerializeField] private LayerMask enemyTowerLayer;
+
+    [Header("Components")]
+    [SerializeField] private Image healthBar;
 
     private Collider[] enemyTowerColliders;
     private Collider[] enemySoldierColliders;
@@ -17,8 +22,10 @@ public class AIController : AIState
 
     private GameObject nearestTower;
 
+    public float currentHitPoint;
     private float nearestDistance2Tower = float.MaxValue;
     private float nearestDistance2Enemy = float.MaxValue;
+    private float imageHitPointRatio;
 
     private bool isAttackAnimPlaying;
 
@@ -28,8 +35,16 @@ public class AIController : AIState
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();   
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();   
     }
+
+    private void OnEnable()
+    {
+        currentHitPoint = hitPoint;
+
+        imageHitPointRatio = 1 / hitPoint; 
+    }
+
 
     private void Update()
     {
@@ -90,13 +105,22 @@ public class AIController : AIState
     {
         if (isAttackAnimPlaying) return;
         isAttackAnimPlaying = true;
-        animator.SetBool("isAttack", true);
+        //animator.SetBool("isAttack", true);
+        animator.SetTrigger("isAttack");
     }
 
     private void ExitAttack()
     {
-        animator.SetBool("isAttack", false);
+        //animator.SetBool("isAttack", false);
         isAttackAnimPlaying = false;
+    }
+
+    public void GetDamage(float takenDamage)
+    {
+        currentHitPoint -= takenDamage;
+        healthBar.fillAmount -= takenDamage * imageHitPointRatio;
+        if (currentHitPoint <= 0)
+            gameObject.SetActive(false);
     }
 
     private void GetNearestTower(Collider[] enemyTowerColliders)

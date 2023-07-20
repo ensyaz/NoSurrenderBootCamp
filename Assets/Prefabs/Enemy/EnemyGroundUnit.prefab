@@ -491,7 +491,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2067577858221638469}
   - component: {fileID: 3679275569880744132}
-  - component: {fileID: 3968441568344008034}
   m_Layer: 7
   m_Name: LowPolySkeleton
   m_TagString: Untagged
@@ -596,29 +595,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0874899, y: 0.0020963252, z: 0.040288918}
     m_Extent: {x: 0.6084763, y: 0.67021155, z: 0.10944065}
   m_DirtyAABB: 0
---- !u!136 &3968441568344008034
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968441568344008032}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.18
-  m_Height: 1.25
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3968441568344008033
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +607,7 @@ GameObject:
   - component: {fileID: 4131633088609466836}
   - component: {fileID: 8501949065170539025}
   - component: {fileID: 3968441568344008035}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LowPolySkeleton_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +712,6 @@ GameObject:
   - component: {fileID: 3079522281713969704}
   - component: {fileID: 7887440749159281399}
   - component: {fileID: 2859420652132624985}
-  - component: {fileID: 3968441568344008039}
   m_Layer: 7
   m_Name: LowPolySkeleton_SholderR
   m_TagString: Untagged
@@ -809,27 +784,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3968441568344008039
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968441568344008036}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.11252507, y: 0.12835711, z: 0.18717092}
-  m_Center: {x: 0.00002764725, y: 0.000009026381, z: 0.00004617497}
 --- !u!1 &3968441568344008037
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +795,6 @@ GameObject:
   - component: {fileID: 8512014466849669780}
   - component: {fileID: 2149950960494987345}
   - component: {fileID: 288457409800468298}
-  - component: {fileID: 3968441568344008056}
   m_Layer: 7
   m_Name: LowPolySkeleton_SholderL
   m_TagString: Untagged
@@ -914,27 +867,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3968441568344008056
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968441568344008037}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.114615895, y: 0.1305128, z: 0.18752278}
-  m_Center: {x: -0.00023701423, y: -0.00007518013, z: 0.000044174492}
 --- !u!1 &3968441568344008038
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +878,6 @@ GameObject:
   - component: {fileID: 7149255357047262631}
   - component: {fileID: 7129029516012083031}
   - component: {fileID: 1030275230283731142}
-  - component: {fileID: 3968441568344008057}
   m_Layer: 7
   m_Name: LowPolySkeleton_Edge
   m_TagString: Untagged
@@ -1019,27 +950,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3968441568344008057
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968441568344008038}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.24846639, y: 0.15494375, z: 0.27399427}
-  m_Center: {x: -0.0000000018139745, y: -0.03549181, z: 0.081867054}
 --- !u!1 &4758786917681175142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1412,7 @@ GameObject:
   - component: {fileID: 876796197409139929}
   - component: {fileID: 4972723599130171459}
   - component: {fileID: 4243690650645588868}
+  - component: {fileID: 6610504118493244432}
   m_Layer: 7
   m_Name: EnemyGroundUnit
   m_TagString: Enemy
@@ -1539,13 +1450,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f378db695dc2442be166a81c372aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  searchRange: 0
   attackableLayer:
     serializedVersion: 2
     m_Bits: 512
-  enemyTowerTransforms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemyTowerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!95 &4972723599130171459
 Animator:
   serializedVersion: 5
@@ -1577,11 +1489,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.185
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1589,6 +1501,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &6610504118493244432
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172442304542317006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.18
+  m_Height: 1.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &8569649574974592577
 GameObject:
   m_ObjectHideFlags: 0
